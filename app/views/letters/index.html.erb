@@ -1,0 +1,27 @@
+<div class="jumbotron jumbotron-primary" style="text-align: center">
+	<h1><%= current_user.name %>'s saved letters</h1>
+	<h4>(Be sure to proofread your letters!)</h4>
+</div>
+
+<% @letters.each do |letter| %>
+	<div class="col-xs-12 col-md-7">
+		<div class="panel panel-default">
+			<div class="container-fluid">
+				<%= letter.greeting.content.capitalize %> <%= letter.to_name %>,
+				<br>
+				<br>
+				<%= letter.body.content.gsub(/([a-z])((?:[^.?!]|\.(?=[a-z]))*)/i) { $1.upcase + $2.rstrip } %>
+				<br>
+				<br>
+				<%= letter.closing.content.capitalize %>,
+				<br>
+				<%= letter.user.name.capitalize %>
+				<br>
+			</div>
+		</div>
+		<%= link_to "delete this letter", letter, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+		<br>
+		<br>
+	</div>
+
+<% end %>

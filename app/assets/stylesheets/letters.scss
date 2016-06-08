@@ -1,0 +1,32 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.footer {
+	border: 1px solid black;
+}
+
+body {
+	font-family: Garamond, Arial;
+}
+
+
+.jumbotron{
+    background-color:#3B5998;
+    color:white;
+    font-family: Comic;
+}
+
+.navbar-custom {
+    font-family: Verdana;
+}
+
+#wrapper{
+   width:900px;
+   margin:0 auto;
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
+}

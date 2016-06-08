@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  greeting: MyText
+  body: MyText
+  closing: MyText
+  to_name: MyString
+  type: 
+  user_id: 1
+
+two:
+  greeting: MyText
+  body: MyText
+  closing: MyText
+  to_name: MyString
+  type: 
+  user_id: 1

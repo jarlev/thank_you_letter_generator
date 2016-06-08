@@ -1,0 +1,58 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-md-7">
+			<div class="panel panel-primary">
+				<div class="panel panel-heading">
+					<h2>Create a new letter</h2>
+				</div>
+				<div class="panel panel-body">
+					<div class="container-fluid">
+					<%= form_for @letter, url: letters_path do |f| %>
+					  	<div class="form-group">
+							<%= f.label :letter_type %>
+							<%= f.text_area :letter_type, class: "form-inline" %>
+						</div>
+						<div class="form-group">
+							<%= f.label :to_name %>
+							<%= f.text_area :to_name, class: "form-inline" %>
+						</div>
+					  	<div class="form-group">
+					    		<%= f.collection_select :greeting_id, Greeting.all, :id, :content, {prompt: "choose a greeting"}, {class: "form-inline"} %>
+					    		<%= link_to "No greetings? Click here to create a new greeting", new_greeting_path %>
+				  		</div>
+						<div class="form-group">
+					    		<%= f.collection_select :body_id, Body.all, :id, :name, {prompt: "choose a body"}, {class: "form-inline"} %>
+							<%= link_to "Create a new body", new_body_path %>  	
+						</div>
+						<div class="form-group">
+							<%= f.collection_select :closing_id, Closing.all, :id, :name, {prompt: "choose a closing"}, {class: "form-inline"} %>
+							<%= link_to "Create a new closing", new_closing_path %>
+						</div>
+						
+						<%= f.submit "Create new letter", class: "btn btn-primary" %>
+					<% end %>
+				</div>
+					<br>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-6 col-md-5">
+			<div class="panel panel-info">
+				<div class="panel panel-heading">
+				<h3>Preview your letter</h3>
+				</div>
+				<div class="panel panel-body">
+					<div class="greeting_preview">
+					Greeting preview goes here
+					</div>
+					<div class="body_preview">
+					Body preview goes here
+					</div>
+					<div class="closing_preview">
+					Closing preview goes here
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
